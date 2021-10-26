@@ -51,3 +51,4 @@ dragArea.addEventListener("drop", (e)=>{
     file = e.dataTransfer.files[0];
     displayFile();
 })
+

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Register</title>
+    <title>New password</title>
     <link rel="stylesheet" href="static/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 </head>
@@ -29,15 +29,12 @@
             <div class="col-sm-1"></div>
             <div class="col-sm-4 content" >
                 <br>
-                <h3>Создание аккаунта</h3>
+                <h3>Введите новый пароль</h3>
                 <br><br>
                     <form action="#">
                         <div class="content-text" style="text-align: right;" >
-                            <input type="email" class="form-control" required id="email" name="email" placeholder="Enter email" style="height: 50px;">
-                            <div class="text-error3" style="color: red;"></div>
-                            <br>
                             <div style="display: flex; flex-direction: row;">
-                                <input type="password" class="form-control" required id="password" name="password" placeholder="Password" style="height: 50px; width: 330px;">
+                                <input type="password" class="form-control" id="password" required name="password" placeholder="Password" style="height: 50px; width: 330px;">
                                 <div class="icon" style="display: block;" onclick="open_passwd()" id="one">
                                     <svg xmlns="http://www.w3.org/2000/svg" style="margin-top: 12px;" width="26" height="26" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
                                         <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
@@ -50,11 +47,11 @@
                                         <path d="M5.525 7.646a2.5 2.5 0 0 0 2.829 2.829l-2.83-2.829zm4.95.708-2.829-2.83a2.5 2.5 0 0 1 2.829 2.829zm3.171 6-12-12 .708-.708 12 12-.708.708z"/>
                                     </svg>
                                 </div>
-                            </div>  
-                            <div class="text-error" style="color: red;"></div>               
+                            </div>
+                            <div class="text-error" style="color: red;"></div>                 
                             <br>
                             <div style="display: flex; flex-direction: row;">
-                                <input type="password" class="form-control" required id="password_confirm" name="password_confirm" placeholder="Confirm password" style="height: 50px; width: 330px;">
+                                <input type="password" class="form-control" id="password_confirm" required name="password_confirm" placeholder="Confirm password" style="height: 50px; width: 330px;">
                                 <div class="icon" onclick="open_passwd_confirm()" id="three">
                                     <svg xmlns="http://www.w3.org/2000/svg" style="margin-top: 12px;" width="26" height="26" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
                                         <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
@@ -68,11 +65,9 @@
                                     </svg>
                                 </div>
                             </div>
-                            <div class="text-error2" style="color: red;"></div>
-                            <br>
-                            <a href="#">Do you have an account?</a>
+                            <div class="text-error2" style="color: red;"></div> 
                         </div>
-                        <input id="myBtn" type="submit" value="Регистрация" class="btn btn-primary" style="margin-bottom: 20px;">
+                        <input id="myBtn" type="submit" value="Сменить пароль" class="btn btn-primary" style="margin-bottom: 20px;">
                     </form>
             </div>
             <div class="col-sm-1"></div>
@@ -149,23 +144,9 @@
 
         const passwd = document.querySelector("#password")
         const passwd_confirm = document.querySelector("#password_confirm")
-        const email = document.querySelector("#email")
         const text_error = document.querySelector(".text-error")
         const text_error2 = document.querySelector(".text-error2")
-        const text_error3 = document.querySelector(".text-error3")
         const myBtn = document.querySelector("#myBtn")
-
-
-        email.addEventListener("change", (e)=>{
-            console.log(e.target.value);
-            if(!checkEmail(e.target.value)){
-                text_error3.innerHTML = "Почта должна в виде \"Example@gmail.com\""
-                disabledBtn(e.target)
-            }else{
-                text_error3.innerHTML = ""
-                activeBtn(e.target)
-            }
-        })
 
         passwd.addEventListener("change", (e)=>{
             if(!checkNumberInString(e.target.value)){
@@ -196,19 +177,6 @@
                 if(!isNaN(value)){
                     result = true
                 }
-            }
-            return result
-        }
-
-        function checkEmail(input){
-            var result = false
-            if(input.indexOf("@") != -1)
-            {
-                result = true
-            }
-            if(input.slice(-1) === "@" || input.slice(0,1) ==="@")
-            {
-                result = false
             }
             return result
         }

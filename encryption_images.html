@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Encryption_images</title>
     <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 </head>
@@ -44,27 +45,33 @@
                             <li class="nav-item"><img src="./our_images/bg_bggenerator_com (6).jpg" onclick="changeImage('seven')" id='seven' name ='seven'></li>
                             <li class="nav-item"><img src="./our_images/bg_bggenerator_com (7).jpg" onclick="changeImage('eight')" id='eight' name ='eight'></li>
                         </ul>
-                        <div class="container1">
-                            <div class="drag-area">
-                                <div class="img">
-                                    <img src="" alt="" id="img">
-                                </div>
-                                <div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" style="color: blue;" width="50" height="50" fill="currentColor" class="bi bi-images" viewBox="0 0 16 16">
-                                        <path d="M4.502 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
-                                        <path d="M14.002 13a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2V5A2 2 0 0 1 2 3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-1.998 2zM14 2H4a1 1 0 0 0-1 1h9.002a2 2 0 0 1 2 2v7A1 1 0 0 0 15 11V3a1 1 0 0 0-1-1zM2.002 4a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1h-10z"/>
-                                    </svg>
-                                </div>
-                                <input id="input" type="file" hidden accept=".png, .jpg, .jpeg">
-                                <span class="header">Drag & Drop</span>
-                                <span class="header">or <span class="button" onclick="document.getElementById('input').click();">browse</span></span>
-                                <span class = "support"> Support: JPEG, JPG, PNG</span>
-                            </div>  
-                        </div>
-                        <div class="button-center" >
-                            <button onclick="deleted()" class="btn-danger" style="border-radius: 5px;">Удалить файл</button>
-                            <button class="btn-primary" style="border-radius: 5px;">Зашифровать</button>
-                        </div>
+                        <form action="">
+                            <div class="container1">
+                                <div class="drag-area">
+                                    <div class="img">
+                                        <img src="" alt="" id="img">
+                                        <span onclick="deleted()" class="btn-close-file">
+                                            <i class="btn-close-file-icon bi bi-x"></i>
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" style="color: blue;" width="50" height="50" fill="currentColor" class="bi bi-images" viewBox="0 0 16 16">
+                                            <path d="M4.502 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+                                            <path d="M14.002 13a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2V5A2 2 0 0 1 2 3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-1.998 2zM14 2H4a1 1 0 0 0-1 1h9.002a2 2 0 0 1 2 2v7A1 1 0 0 0 15 11V3a1 1 0 0 0-1-1zM2.002 4a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1h-10z"/>
+                                        </svg>
+                                    </div>
+                                    <input id="input" type="file" hidden accept=".bmp">
+                                    <input id="inputFile" name="filePath" type="text" value="{{ filePath }}" multiple hidden>
+                                    <input id="inputImage" name="defaultImage" value="" type="text" multiple hidden>
+                                    <span class="header">Drag & Drop</span>
+                                    <span class="header">or <span class="button" onclick="document.getElementById('input').click();">browse</span></span>
+                                    <span class = "support"> Support: BMP</span>
+                                </div>  
+                            </div>
+                            <div class="button-center" >
+                                <button class="btn-primary" style="border-radius: 5px;">Зашифровать</button>
+                            </div>
+                        </form>
 
                     </div>
                 </div>

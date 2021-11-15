@@ -338,6 +338,10 @@ ul li img:hover {
     justify-content: space-between;
 }
 
+.map-image-content .image_map{
+    width: 100%;
+}
+/* 
 .map-image{
     width: 100%;
     height: 50%;
@@ -372,7 +376,7 @@ ul li img:hover {
     font-size: 26px;
     display: none;
     color: blue;
-}
+} */
 
 /* encryption */
 .btn-close-file{
